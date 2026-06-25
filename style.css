@@ -92,16 +92,51 @@ body {
   padding: 0 20px;
 }
 
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 760px;
+}
+
 .home-content h1 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   color: #64ffda;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 .home-content h3 {
   color: #facc15;
   font-weight: 500;
   margin-bottom: 20px;
 }
+
+.typing-line {
+  color: #facc15;
+  font-weight: 500;
+  margin-bottom: 20px;
+  min-height: 2.4rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.25em;
+  background: currentColor;
+  margin-left: 6px;
+  vertical-align: bottom;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.1%, 100% { opacity: 0; }
+}
+
 .home-content p {
   max-width: 600px;
   color: #8892b0;

@@ -64,4 +64,26 @@ scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// ===== Typing Animation =====
+const typingText = document.getElementById("typing-text");
+const textToType = "SOFTWARE ENGINEER";
+const typingSpeed = 120;
+const pauseDuration = 1000;
+let charIndex = 0;
+
+const typeLoop = () => {
+  typingText.textContent = textToType.slice(0, charIndex);
+  charIndex++;
+  if (charIndex <= textToType.length) {
+    setTimeout(typeLoop, typingSpeed);
+  } else {
+    setTimeout(() => {
+      charIndex = 0;
+      setTimeout(typeLoop, typingSpeed);
+    }, pauseDuration);
+  }
+};
+
+typeLoop();
+
 
